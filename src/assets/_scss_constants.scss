@@ -1,0 +1,23 @@
+$brand-title-font: 'Caveat Brush', cursive;
+$brand-subtitle-font: 'Pacifico', cursive;
+$brand-regular-font: 'Open Sans', sans-serif;
+
+
+$brand-primary-color: #A770EF;
+$brand-secondary-color: #FDB99B;
+$brand-tertiary-color: white;
+
+
+/*
+$brand-gradient-default: -webkit-linear-gradient(to bottom, #FDB99B, #CF8BF3, #A770EF);
+$brand-gradient-webkit: linear-gradient(to bottom, #FDB99B, #CF8BF3, #A770EF);
+$brand-gradient-fallback: #A770EF;
+*/
+
+$brand-gradient-default: -webkit-linear-gradient(to bottom, #A770EF, #CF8BF3);
+$brand-gradient-webkit: linear-gradient(to bottom, #A770EF, #CF8BF3);
+$brand-gradient-fallback: #A770EF;
+
+$brand-gradient-default-inverse: -webkit-linear-gradient(to bottom, #CF8BF3, #A770EF);
+$brand-gradient-webkit-inverse: linear-gradient(to bottom, #CF8BF3, #A770EF);
+$brand-gradient-fallback-inverse: #CF8BF3;

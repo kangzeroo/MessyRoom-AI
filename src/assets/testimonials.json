@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0",
+    "quote": "Amazing quality at a great price",
+    "author": "Brandon Spiel",
+    "company": "Bridal Condos",
+    "thumbnail": ""
+  },
+  {
+    "id": "1",
+    "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "author": "Laura Chen",
+    "company": "Castle Homes",
+    "thumbnail": ""
+  },
+  {
+    "id": "2",
+    "quote": "Nulla at nulla faucibus, tempor odio id, pretium dui!",
+    "author": "Guspreet Singh",
+    "company": "Singer PM",
+    "thumbnail": ""
+  },
+  {
+    "id": "3",
+    "quote": "Nulla quis ex nec eros molestie dignissim!",
+    "author": "Lucelle",
+    "company": "Hazelnut Manors",
+    "thumbnail": ""
+  },
+  {
+    "id": "4",
+    "quote": "Suspendisse neque metus, aliquet id nisi vel, rutrum eleifend ante.",
+    "author": "Nina Manaoi",
+    "company": "Cortouv Property Management",
+    "thumbnail": ""
+  },
+  {
+    "id": "5",
+    "quote": "Koretoevo vel, rutrum rudimentalis cortuga.",
+    "author": "Sasha Pinto",
+    "company": "Pinto Home Management",
+    "thumbnail": ""
+  }
+]

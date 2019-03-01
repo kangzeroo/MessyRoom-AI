@@ -1,0 +1,202 @@
+@import '../../assets/_scss_constants';
+
+#LandingPage {
+  width: 100vw;
+  min-height: 100vh;
+  // overflow: hidden;
+}
+
+#LandingPageGradient {
+  background: $brand-gradient-fallback;
+  background: $brand-gradient-webkit;
+  background: $brand-gradient-default;
+}
+
+#LandingHeader {
+  width: 100%;
+  height: 60px;
+  // background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#LandingHeader-logo {
+  margin: 0px 0px 0px 30px;
+  font-family: $brand-title-font;
+  font-size: 1.5rem;
+}
+
+#LandingHeader-nav {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: $brand-regular-font;
+}
+
+#LandingDemo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#LandingDemo-title {
+  padding: 150px 0px 100px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#LandingDemo-title-main {
+  font-size: 4rem;
+  color: white;
+  font-family: $brand-regular-font;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+#LandingDemo-title-messy {
+  font-family: $brand-title-font;
+  font-size: 5rem;
+}
+
+#LandingDemo-title-sub {
+  font-size: 1.8rem;
+  color: white;
+  font-family: $brand-regular-font;
+  margin: 10px 0px 0px 0px;
+}
+
+#LandingDemo-title-action {
+  margin: 100px 0px 30px 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  padding: 15px;
+  width: 250px;
+  &:hover {
+    color: $brand-primary-color;
+    background-color: white;
+  }
+}
+
+#LandingDemo-demo {
+  height: auto;
+  width: 80%;
+}
+
+.clickable-hoverable {
+  cursor: pointer;
+}
+
+.spacer {
+  margin: 100px auto;
+}
+
+#LandingCaseStudies {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  width: 100vw;
+  padding: 50px;
+}
+
+#LandingCaseStudies-title {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+#LandingCaseStudies-body {
+  width: 100vw;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LandingCaseStudies-card-brand {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.LandingCaseStudies-brand {
+  margin: 10px 0px 10px 0px;
+  width: 150px;
+  height: auto;
+}
+
+#LandingTestimonials {
+  width: 100vw;
+  // height: 50vh;
+  background: $brand-gradient-fallback-inverse;
+  background: $brand-gradient-webkit-inverse;
+  background: $brand-gradient-default-inverse;
+  padding: 150px 0px 150px 0px;
+}
+
+#LandingTestimonials-title {
+  padding: 0px 10% 100px 10%;
+  font-size: 3rem;
+  color: white;
+  font-family: $brand-subtitle-font;
+}
+
+#TestimonialRow-carosel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0% 10% 0% 10%;
+}
+
+.TestimonialCard {
+  flex: 1;
+  height: 250px;
+  border-radius: 25px;
+  margin: 15px;
+  min-width: 300px;
+  cursor: pointer;
+  background-color: rgba(256,256,256,0.85);
+}
+
+.TestimonialCard-quote {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.TestimonialCard-author {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
