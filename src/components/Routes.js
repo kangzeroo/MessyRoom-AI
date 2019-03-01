@@ -9,6 +9,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LandingPage from './LandingPage/LandingPage';
+import PricingPage from './PricingPage/PricingPage'
 import SandboxPage from './template/sandbox/SandboxPage';
 
 export default () => {
@@ -16,6 +17,7 @@ export default () => {
 	 <Router>
       <div>
          <Route path="/" exact component={LandingPage} />
+         <Route path="/pricing" exact component={PricingPage} />
          <Route path="/sandbox" exact component={SandboxPage} />
       </div>
    </Router>

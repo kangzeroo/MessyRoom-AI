@@ -1,0 +1,60 @@
+@import '../../../assets/_scss_constants';
+
+#LandingDemo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#LandingDemo-title {
+  padding: 150px 0px 100px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#LandingDemo-title-main {
+  font-size: 4rem;
+  color: white;
+  font-family: $brand-regular-font;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+#LandingDemo-title-messy {
+  font-family: $brand-title-font;
+  font-size: 5rem;
+}
+
+#LandingDemo-title-sub {
+  font-size: 1.8rem;
+  color: white;
+  font-family: $brand-regular-font;
+  margin: 10px 0px 0px 0px;
+}
+
+#LandingDemo-title-action {
+  margin: 100px 0px 30px 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  padding: 15px;
+  width: 250px;
+  &:hover {
+    color: $brand-primary-color;
+    background-color: white;
+  }
+}
+
+#LandingDemo-demo {
+  height: auto;
+  width: 80%;
+}
+
+.spacer {
+  margin: 100px auto;
+}

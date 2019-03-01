@@ -1,0 +1,50 @@
+@import '../../../assets/_scss_constants';
+
+#LandingCaseStudies {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  width: 100vw;
+  padding: 50px;
+}
+
+#LandingCaseStudies-title {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+#LandingCaseStudies-body {
+  width: 100vw;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LandingCaseStudies-card-brand {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.LandingCaseStudies-brand {
+  margin: 10px 0px 10px 0px;
+  width: 150px;
+  height: auto;
+}

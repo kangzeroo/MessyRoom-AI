@@ -1,0 +1,32 @@
+@import '../../../assets/_scss_constants';
+
+#LandingGallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1400px;
+  width: 100vw;
+  padding: 5% 0% 5% 0%;
+}
+
+#LandingGallery-title {
+  padding: 100px;
+  font-size: 3rem;
+}
+
+.LandingGallery-image-wrapper {
+  width: 300px;
+  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.LandingGallery-image {
+  width: auto;
+  height: 100%;
+}
