@@ -29,6 +29,7 @@ export default ({}) => {
         <LandingDemo />
       </div>
       <LandingGallery gallery={gallery} />
+      <div style={{ height: "50px", width: "100%" }}></div>
       <LandingCaseStudies brands={brands} />
       <LandingTestimonials testimonials={testimonials} />
     </div>

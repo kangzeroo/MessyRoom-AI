@@ -25,9 +25,9 @@ export default ({}) => {
       <div id="LandingDemo-title">
         <div id="LandingDemo-title-main">Fix <span id="LandingDemo-title-messy">Messy</span> Photos</div>
         <div id="LandingDemo-title-sub">
-          With A.I. Perfect for busy renters and landlords.
+          Indoor Photography made easy with A.I.
         </div>
-        <button id="LandingDemo-title-action" className="clickable-hoverable">GET STARTED</button>
+        <button id="LandingDemo-title-action" className="clickable-hoverable">LAUNCH EDITOR</button>
       </div>
       <div id="LandingDemo-demo">
         <ReactCompareImage leftImage={images[0]} rightImage={images[1]} />

@@ -36,7 +36,7 @@ const TestimonialRow = ({ testimonials }) => {
       <div id="TestimonialRow-carosel">
         {
           testimonials.map(profile => (
-            <TestimonialCard profile={profile} />
+            <TestimonialCard key={profile.id} profile={profile} />
           ))
         }
       </div>
@@ -51,7 +51,7 @@ const TestimonialRow = ({ testimonials }) => {
 **/
 const TestimonialCard = ({ profile }) => {
   return (
-    <Card key={profile.id} className="TestimonialCard" bordered>
+    <Card className="TestimonialCard" bordered>
       <Card.Meta className="TestimonialCard-quote" description={profile.quote} />
       <Card.Meta
         title={profile.author}
