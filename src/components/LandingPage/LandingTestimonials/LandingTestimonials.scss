@@ -6,32 +6,20 @@
   background: $brand-gradient-fallback-inverse;
   background: $brand-gradient-webkit-inverse;
   background: $brand-gradient-default-inverse;
-  padding: 150px 0px 150px 0px;
 }
 
 #LandingTestimonials-title {
-  padding: 0px 10% 100px 10%;
+  padding: 150px 10% 100px 10%;
   font-size: 3rem;
   color: white;
   font-family: $brand-subtitle-font;
 }
 
-
-
-#TestimonialRow-carosel {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0% 10% 0% 10%;
-}
-
 .TestimonialCard {
   flex: 1;
-  height: 250px;
   border-radius: 25px;
   margin: 15px;
-  min-width: 300px;
+  width: 100%;
   cursor: pointer;
   background-color: rgba(256,256,256,0.85);
 }
