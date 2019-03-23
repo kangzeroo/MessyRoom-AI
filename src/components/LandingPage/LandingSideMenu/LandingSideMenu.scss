@@ -18,6 +18,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  color: white;
 }
 
 .LandingSideMenu-panel-item {
@@ -46,12 +48,12 @@
 }
 
 #LandingSideMenu-panel {
-  width: 50vw;
-  max-width: 400px;
+  width: 70vw;
+  max-width: 500px;
   height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: white;
+  background-color: #A770EF;
   z-index: 11;
 }

@@ -24,13 +24,15 @@ class LandingHeader extends Component {
     if (this.props.size.width > 700) {
       return (
         <div id="LandingHeader">
-          <div id="LandingHeader-logo">MESSY ROOM</div>
+          <div id="LandingHeader-logo">
+            <Link to="/" style={{ color: 'white' }}>MESSY ROOM</Link>
+          </div>
           <div id="LandingHeader-nav-container">
             <div id="LandingHeader-nav">
-              <div className="clickable-hoverable"><Link to="/pricing" style={{ color: 'white' }}>Pricing</Link></div>
-              <div className="clickable-hoverable"><Link to="/faq" style={{ color: 'white' }}>FAQ</Link></div>
-              <div className="clickable-hoverable"><Link to="/api" style={{ color: 'white' }}>API</Link></div>
-              <div className="clickable-hoverable"><Link to="/login" style={{ color: 'white' }}>Login</Link></div>
+              <Link to="/pricing" style={{ color: 'white' }}><div className="clickable-hoverable">Pricing</div></Link>
+              <Link to="/faq" style={{ color: 'white' }}><div className="clickable-hoverable">FAQ</div></Link>
+              <Link to="/api" style={{ color: 'white' }}><div className="clickable-hoverable">API</div></Link>
+              <Link to="/login" style={{ color: 'white' }}><div className="clickable-hoverable">Login</div></Link>
             </div>
           </div>
         </div>

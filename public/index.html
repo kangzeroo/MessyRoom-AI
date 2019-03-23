@@ -13,7 +13,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link rel="stylesheet" href="/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Open+Sans|Permanent+Marker|Pacifico" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -25,6 +25,19 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Messy Room A.I.</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAsf1GW89bP8YI33bSkWX30W_H65qJnj0E",
+        authDomain: "cleanphoto-rentals.firebaseapp.com",
+        databaseURL: "https://cleanphoto-rentals.firebaseio.com",
+        projectId: "cleanphoto-rentals",
+        storageBucket: "cleanphoto-rentals.appspot.com",
+        messagingSenderId: "955782647524"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
