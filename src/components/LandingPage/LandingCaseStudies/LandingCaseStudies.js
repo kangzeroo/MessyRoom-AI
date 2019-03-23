@@ -8,24 +8,32 @@
 
 import React from 'react'
 import './LandingCaseStudies.scss'
+import StackGrid from "react-stack-grid";
 
 /** <LandingCaseStudies>
  *
  *
 **/
 export default ({ brands }) => {
+  const colWidth = 200
   return (
     <div id="LandingCaseStudies">
       <div id="LandingCaseStudies-title">CASE STUDIES</div>
-      <div id="LandingCaseStudies-body">
+      <StackGrid
+        className="LandingCaseStudies-body"
+        columnWidth={colWidth}
+        gutterWidth={15}
+        gutterHeight={15}
+        monitorImagesLoaded
+      >
         {
           brands.map(brand => (
-            <div className="LandingCaseStudies-card-brand">
+            <div key={brand.company} className="LandingCaseStudies-card-brand">
               <img className="LandingCaseStudies-brand" src={brand.logo} alt={brand.company} />
             </div>
           ))
         }
-      </div>
+      </StackGrid>
     </div>
   )
 }
