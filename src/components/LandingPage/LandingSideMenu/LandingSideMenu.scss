@@ -1,0 +1,57 @@
+@import '../../../assets/_scss_constants';
+
+#LandingSideMenu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+#LandingSideMenu-panel-title {
+  width: 100%;
+  height: 100px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LandingSideMenu-panel-item {
+  width: 100%;
+  height: 100px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0,0.2);
+  }
+}
+
+
+#LandingSideMenu-shader {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+#LandingSideMenu-panel {
+  width: 50vw;
+  max-width: 400px;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  z-index: 11;
+}

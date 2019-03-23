@@ -6,8 +6,10 @@
  * please use with ESlint, Prettier and Flow
  */
 
-// related to template stuff
-export const TEMPLATE_INCREMENT = "TEMPLATE_INCREMENT";
+import { TOGGLE_SIDEMENU } from "../action_types";
 
-// related to system stuff
-export const TOGGLE_SIDEMENU = "TOGGLE_SIDEMENU";
+export const toggleSideMenu = () => dispatch => {
+  return dispatch({
+    type: TOGGLE_SIDEMENU,
+  });
+};

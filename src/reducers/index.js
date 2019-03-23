@@ -8,7 +8,9 @@
 
 import { combineReducers } from "redux";
 import templateReducers from "./template/template_reducers";
+import systemReducers from "./system/system_reducers";
 
 export default combineReducers({
-  template: templateReducers
+  template: templateReducers,
+  system: systemReducers,
 });

@@ -37,7 +37,7 @@ class LandingCaseStudies extends Component {
                 return index < 3
               }
             }).map(brand => (
-              <img className="LandingCaseStudies-brand" src={brand.logo} alt={brand.company} />
+              <img key={brand.id} className="LandingCaseStudies-brand" src={brand.logo} alt={brand.company} />
             ))
           }
         </StackGrid>

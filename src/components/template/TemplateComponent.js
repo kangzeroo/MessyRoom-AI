@@ -34,7 +34,7 @@ export default class TemplateComponent extends Component {
   }
 };
 
-// const mapStateToProps = (redux) => {}
+// const mapStateToProps = (redux) => ({})
 // const mapActionsToComponent = {}
 
 // export default connect(mapStateToProps, mapActionsToComponent)(TemplateComponent);

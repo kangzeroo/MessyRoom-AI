@@ -36,10 +36,10 @@ class LandingTestimonials extends Component {
               if (this.props.size.width > 700) {
                 return true
               } else {
-                return index < 3
+                return index < 4
               }
             }).map(advocate => (
-              <TestimonialCard advocate={advocate} />
+              <TestimonialCard key={advocate.id} advocate={advocate} />
             ))
           }
         </StackGrid>
