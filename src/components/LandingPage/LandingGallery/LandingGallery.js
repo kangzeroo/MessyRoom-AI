@@ -34,7 +34,14 @@ class LandingGallery extends Component {
   }
 
   render () {
-    let colWidth = 300
+    let colWidth = 400
+    let gutterWidth = 15
+    let gutterHeight = 15
+    if (this.props.size.width < 700) {
+      colWidth = 500
+      gutterWidth = 0
+      gutterHeight = 5
+    }
     const { gallery } = this.props
     return (
       <div id="LandingGallery">
@@ -42,8 +49,8 @@ class LandingGallery extends Component {
         <StackGrid
           className="LandingGallery-StackGrid"
           columnWidth={colWidth}
-          gutterWidth={15}
-          gutterHeight={15}
+          gutterWidth={gutterWidth}
+          gutterHeight={gutterHeight}
           monitorImagesLoaded
         >
           {

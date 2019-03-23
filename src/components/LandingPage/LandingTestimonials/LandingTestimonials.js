@@ -20,15 +20,22 @@ import StackGrid from "react-stack-grid";
 class LandingTestimonials extends Component {
   render() {
     const { testimonials } = this.props
-    const colWidth = 300
+    let colWidth = 400
+    let gutterWidth = 50
+    let gutterHeight = 25
+    if (this.props.size.width < 700) {
+      colWidth = 500
+      gutterWidth = 5
+      gutterHeight = 5
+    }
     return (
       <div id="LandingTestimonials">
         <div id="LandingTestimonials-title">⭐ &nbsp; Testimonials &nbsp; ⭐</div>
         <StackGrid
           className="LandingCaseStudies-StackGrid"
           columnWidth={colWidth}
-          gutterWidth={50}
-          gutterHeight={25}
+          gutterWidth={gutterWidth}
+          gutterHeight={gutterHeight}
           monitorImagesLoaded
         >
           {

@@ -34,11 +34,13 @@ class LandingSideMenu extends Component {
         <div style={{ position: 'relative' }}>
           <div id="LandingSideMenu-shader" onClick={() => this.props.toggleSideMenu()}></div>
           <div id="LandingSideMenu-panel">
-            <div id="LandingSideMenu-panel-title">MessyRoom</div>
-            <div className="LandingSideMenu-panel-item"><Link to="/pricing" style={{ color: 'black' }}>Pricing</Link></div>
-            <div className="LandingSideMenu-panel-item"><Link to="/faq" style={{ color: 'black' }}>FAQ</Link></div>
-            <div className="LandingSideMenu-panel-item"><Link to="/api" style={{ color: 'black' }}>API</Link></div>
-            <div className="LandingSideMenu-panel-item"><Link to="/login" style={{ color: 'black' }}>Login</Link></div>
+            <div id="LandingSideMenu-panel-title">
+              <Link to="/" style={{ color: 'white' }}>MessyRoom</Link>
+            </div>
+            <Link to="/pricing" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Pricing</div></Link>
+            <Link to="/faq" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">FAQ</div></Link>
+            <Link to="/api" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">API</div></Link>
+            <Link to="/login" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Login</div></Link>
           </div>
         </div>
       </div>

@@ -35,6 +35,7 @@
 }
 
 .clickable-hoverable {
-  cursor: pointer;
+  /* cursor: pointer; */
+  cursor: not-allowed;
   color: white;
 }
