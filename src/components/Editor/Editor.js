@@ -54,15 +54,6 @@ export default class Editor extends Component {
       <div>
         <Divider />
         {
-          this.state.currentFile.uid
-          ?
-          null
-          :
-          <div className="Editor-status-message" style={{ backgroundColor: 'gray', color: 'white' }}>
-            SELECT AN IMAGE
-          </div>
-        }
-        {
           this.state.currentFile.status === 'uploading'
           ?
           <div className="Editor-status-message" style={{ backgroundColor: 'yellow', color: 'black' }}>
@@ -85,7 +76,7 @@ export default class Editor extends Component {
           this.state.currentFile.status === 'predicting'
           ?
           <div className="Editor-status-message" style={{ backgroundColor: 'blue', color: 'white' }}>
-            DRAWING IN IMAGE
+            DRAWING IN PROGRESS...
           </div>
           :
           null

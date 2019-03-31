@@ -23,44 +23,28 @@ const CleaningList = ({ fileList, selectForEdit, currentFile }) => {
   const renderOverlay = (file) => {
     if (file.status === 'predicting') {
       return (
-        <div className={`
-            img-thumb-overlay
-            ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
-          `}
-        >
+        <div className="img-thumb-overlay">
           <div class="img-thumb-predicting"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
       )
     }
     if (file.status === 'uploading') {
       return (
-        <div className={`
-            img-thumb-overlay
-            ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
-          `}
-        >
+        <div className="img-thumb-overlay">
           <div className="img-thumb-uploading"><div></div><div></div><div></div><div></div></div>
         </div>
       )
     }
     if (file.status === 'complete') {
       return (
-        <div className={`
-            img-thumb-overlay
-            ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
-          `}
-        >
+        <div className="img-thumb-overlay">
           <img src="https://img.icons8.com/color/48/000000/ok.png" className="img-thumb-complete" />
         </div>
       )
     }
     if (file.status === 'error') {
       return (
-        <div className={`
-            img-thumb-overlay
-            ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
-          `}
-        >
+        <div className="img-thumb-overlay">
           <img src="https://img.icons8.com/color/48/000000/error.png" className="img-thumb-error" />
         </div>
       )
@@ -83,7 +67,11 @@ const CleaningList = ({ fileList, selectForEdit, currentFile }) => {
           <UploadTile className="tile" />
           {
             fileList.map(file => (
-              <div key={file.uid} className="img-thumb-container tile" onClick={selectForEdit(file)}>
+              <div key={file.uid} className={`
+                img-thumb-container
+                tile
+                ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
+              `} onClick={selectForEdit(file)}>
                 <img src={file.url} className="img-thumb" />
                 {
                   renderOverlay(file)

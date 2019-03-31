@@ -7,8 +7,8 @@ import Editor from '../../components/Editor/Editor'
 storiesOf('Editor', module)
       .addDecorator(storyFn => (
         <div style={{
-          width: '600px',
-          height: '1200px',
+          width: '1200px',
+          height: 'auto',
           backgroundColor: 'gray',
           padding: '10px',
         }}>{storyFn()}</div>
