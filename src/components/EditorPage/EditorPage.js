@@ -6,13 +6,14 @@
  * please use with ESlint, Prettier and Flow
  */
 
-import React from 'react'
-import './PricingPage.scss'
+import React from 'react';
+import Editor from '../Editor/Editor'
+import "./EditorPage.scss"
 
 export default ({}) => {
   return (
-    <div id="PricingPage">
-      PricingPage
+    <div id="EditorPage">
+      <Editor />
     </div>
   )
 }

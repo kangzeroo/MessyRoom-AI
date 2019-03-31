@@ -9,7 +9,7 @@
 import React, { Component, Fragment, } from 'react'
 import ReactCompareImage from 'react-compare-image';
 // import { connect } from 'react-redux'
-import { Divider, Tooltip } from 'antd'
+import { Divider, Tooltip, Spin, Icon } from 'antd'
 import "./CleaningCanvas.scss"
 import PropTypes from 'prop-types'
 
@@ -28,9 +28,15 @@ export default class CleaningCanvas extends Component {
   // fnEventHandlerWithoutBind = (params) => (e) => {}
   // fnRegular = () => { this.setState((prevState, currProps) => ({})) }
 
-  renderRatingControls = () => {
+  renderCompletedControls = (currentFile) => {
     return (
       <div className='CleaningCanvas-controls-segment'>
+        <Tooltip placement="topLeft" title="Leave the canvas" arrowPointAtCenter>
+          <button className="CleaningCanvas-control" onClick={() => this.props.setCurrentFile({})} aria-label="cancel editing">
+            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/material-outlined/30/000000/minimize-window.png" />
+            <label className="CleaningCanvas-control-label">CLOSE</label>
+          </button>
+        </Tooltip>
         <Tooltip placement="topLeft" title="The drawing meet expectations" arrowPointAtCenter>
           <button className="CleaningCanvas-control" aria-label="poor results">
             <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/material-sharp/30/000000/thumbs-up.png" />
@@ -43,24 +49,19 @@ export default class CleaningCanvas extends Component {
             <label className="CleaningCanvas-control-label">BAD</label>
           </button>
         </Tooltip>
-      </div>
-    )
-  }
-
-  renderCompletedControls = () => {
-    return (
-      <div className='CleaningCanvas-controls-segment'>
         <Tooltip placement="topLeft" title="Restart from original image" arrowPointAtCenter>
-          <button className="CleaningCanvas-control" aria-label="restart image">
+          <button className="CleaningCanvas-control" onClick={() => this.props.restartDrawing(currentFile)} aria-label="restart image">
             <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/ios/30/000000/restart-filled.png" />
             <label className="CleaningCanvas-control-label">RESTART</label>
           </button>
         </Tooltip>
         <Tooltip placement="topLeft" title="Download cleaned image" arrowPointAtCenter>
-          <button className="CleaningCanvas-control" aria-label="restart image">
-            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/metro/30/000000/save.png" />
-            <label className="CleaningCanvas-control-label">DOWNLOAD</label>
-          </button>
+          <a href={currentFile.url} download={currentFile.name}>
+            <button className="CleaningCanvas-control" aria-label="restart image">
+              <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/metro/30/000000/save.png" />
+              <label className="CleaningCanvas-control-label">DOWNLOAD</label>
+            </button>
+          </a>
         </Tooltip>
       </div>
     )
@@ -97,23 +98,29 @@ export default class CleaningCanvas extends Component {
     )
   }
 
-  renderFileControls = () => {
+  renderFileControls = (currentFile) => {
     return (
       <div className='CleaningCanvas-controls-segment'>
         <Tooltip placement="topLeft" title="Leave the canvas" arrowPointAtCenter>
-          <button className="CleaningCanvas-control" aria-label="cancel editing">
-            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png" />
-            <label className="CleaningCanvas-control-label">CANCEL</label>
+          <button className="CleaningCanvas-control" onClick={() => this.props.setCurrentFile({})} aria-label="cancel editing">
+            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/material-outlined/30/000000/minimize-window.png" />
+            <label className="CleaningCanvas-control-label">CLOSE</label>
+          </button>
+        </Tooltip>
+        <Tooltip placement="topLeft" title="Delete the original and edited image" arrowPointAtCenter>
+          <button className="CleaningCanvas-control" onClick={(e) => this.props.onRemoveFile(e, currentFile)} aria-label="delete image">
+            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/metro/30/000000/cancel.png" />
+            <label className="CleaningCanvas-control-label">DELETE</label>
           </button>
         </Tooltip>
         <Tooltip placement="topLeft" title="Restart from original image" arrowPointAtCenter>
-          <button className="CleaningCanvas-control" aria-label="restart image">
+          <button className="CleaningCanvas-control" onClick={() => this.props.restartDrawing(currentFile)} aria-label="restart image">
             <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/ios/30/000000/restart-filled.png" />
             <label className="CleaningCanvas-control-label">RESTART</label>
           </button>
         </Tooltip>
         <Tooltip placement="topLeft" title="Send image to be cleaned" arrowPointAtCenter>
-          <button className="CleaningCanvas-control" aria-label="save changes">
+          <button className="CleaningCanvas-control" onClick={(e) => this.props.submitImage(currentFile)} aria-label="save changes">
             <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/ios-glyphs/30/000000/paper-plane.png" />
               <label className="CleaningCanvas-control-label">SUBMIT</label>
           </button>
@@ -122,42 +129,95 @@ export default class CleaningCanvas extends Component {
     )
   }
 
+  renderPredictingControls = () => {
+    return (
+      <div className='CleaningCanvas-controls-segment'>
+        <Tooltip placement="topLeft" title="Leave the canvas" arrowPointAtCenter>
+          <button className="CleaningCanvas-control" onClick={() => this.props.setCurrentFile({})} aria-label="close notification">
+            <img className="CleaningCanvas-control-icon" src="https://img.icons8.com/material-outlined/30/000000/minimize-window.png" />
+            <label className="CleaningCanvas-control-label">CLOSE</label>
+          </button>
+        </Tooltip>
+      </div>
+    )
+  }
+
+  renderLoadingControls = (currentFile) => {
+    if (currentFile.status === 'predicting') {
+      return (
+        <Fragment>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: 'flex-start', alignItems: 'center' }}>
+            <Spin size="large" />
+            <div style={{ width: "30px", height: "100%" }} />
+            <b style={{ fontSize: "1.5rem" }}>IMAGE BEING RE-DRAWN...</b>
+          </div>
+          {
+            this.renderPredictingControls()
+          }
+        </Fragment>
+      )
+    } else if (currentFile.status === 'complete') {
+      return (
+        <Fragment>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: 'flex-start', alignItems: 'center' }}>
+            <img src="https://img.icons8.com/color/70/000000/ok.png" />
+            <div style={{ width: "30px", height: "100%" }} />
+            <b style={{ fontSize: "1.5rem" }}>IMAGE DRAWN</b>
+          </div>
+          {
+            this.renderCompletedControls(currentFile)
+          }
+        </Fragment>
+      )
+    } else if (currentFile.status === 'error') {
+      return (
+        <Fragment>
+          <Icon type="warning" size="large" />
+          <b>WARNING AN ERROR OCCURRED</b>
+        </Fragment>
+      )
+    } else {
+      return (
+        <Fragment>
+          {
+            this.renderEditControls()
+          }
+          {
+            this.renderFileControls(currentFile)
+          }
+        </Fragment>
+      )
+    }
+  }
+
+  renderArtboard = (currentFile) => {
+    if (currentFile.status === 'complete') {
+      return (
+        <ReactCompareImage leftImage={currentFile.url} rightImage={currentFile.url} />
+      )
+    } else if (currentFile.status === 'predicting') {
+      return null
+    } else {
+      return (
+        <img src={currentFile.url} style={{ width: '100%', height: 'auto' }} />
+      )
+    }
+  }
+
   render () {
-    const { currentFile, editImage, resetImage, removeFromEdit } = this.props;
+    const { currentFile, restartDrawing, onRemoveFile, setCurrentFile, submitImage } = this.props;
     return (
       <div id='CleaningCanvas'>
         <Divider style={{ height: '3px' }} />
         <div id="CleaningCanvas-controls-bar">
           {
-            currentFile.status === 'complete'
-            ?
-            <Fragment>
-              {
-                this.renderRatingControls()
-              }
-              {
-                this.renderCompletedControls()
-              }
-            </Fragment>
-            :
-            <Fragment>
-              {
-                this.renderEditControls()
-              }
-              {
-                this.renderFileControls()
-              }
-            </Fragment>
+            this.renderLoadingControls(currentFile)
           }
         </div>
         <Divider style={{ height: '3px' }} />
         <div id="CleaningCanvas-artboard">
           {
-            currentFile.status === 'complete'
-            ?
-            <ReactCompareImage leftImage={currentFile.url} rightImage={currentFile.url} />
-            :
-            <img src={currentFile.url} style={{ width: '100%', height: 'auto' }} />
+            this.renderArtboard(currentFile)
           }
         </div>
       </div>

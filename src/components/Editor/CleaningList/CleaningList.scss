@@ -1,5 +1,4 @@
-$img-tile-height: 150px;
-$img-tile-width: 150px;
+@import '../../../assets/_scss_constants';
 
 #CleaningList {
   display: flex;
@@ -11,8 +10,13 @@ $img-tile-width: 150px;
   cursor: pointer;
 }
 
+.img-tile {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .img-thumb-remove {
-  position: absolute;
+  position: fixed;
   top: -5px;
   right: -15px;
   background-color: rgba(0,0,0,0);
@@ -21,9 +25,11 @@ $img-tile-width: 150px;
 }
 
 .img-upload-tile {
-  background-color: rgba(0,0,0,0.05);
   width: $img-tile-height;
   height: $img-tile-width;
+  background-color: rgba(0,0,0,0.1);
+  border: 3px dashed black;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -34,6 +40,7 @@ $img-tile-width: 150px;
   position: relative;
   width: $img-tile-height;
   height: $img-tile-width;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .img-thumb {
@@ -71,7 +78,7 @@ $img-tile-width: 150px;
 }
 
 .img-thumb-selected {
-  border: 7px solid black;
+  border: 7px solid rgba(0,0,0,0.5);
 }
 
 .img-thumb-uploading {

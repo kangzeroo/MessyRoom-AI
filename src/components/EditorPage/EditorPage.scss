@@ -1,0 +1,14 @@
+@import '../../assets/_scss_constants';
+
+#EditorPage {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: $brand-gradient-fallback;
+  background: $brand-gradient-webkit;
+  background: $brand-gradient-default;
+}
