@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import "antd/dist/antd.css"
-import Editor from '../../components/Widget/Editor'
+import Editor from '../../components/Editor/Editor'
 
 storiesOf('Editor', module)
       .addDecorator(storyFn => (
@@ -107,7 +107,7 @@ storiesOf('Editor', module)
                     {
                         uid: '-1',
                         name: 'xxx.png',
-                        status: 'loading',
+                        status: 'predicting',
                         url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
                     },
                     {
@@ -185,7 +185,7 @@ storiesOf('Editor', module)
                     {
                         uid: '-1',
                         name: 'xxx.png',
-                        status: 'loading',
+                        status: 'predicting',
                         url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
                     },
                     {

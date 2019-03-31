@@ -21,7 +21,7 @@ const UploadTile = () => {
 const CleaningList = ({ fileList, selectForEdit, currentFile }) => {
 
   const renderOverlay = (file) => {
-    if (file.status === 'loading') {
+    if (file.status === 'predicting') {
       return (
         <div className={`
             img-thumb-overlay
@@ -39,7 +39,7 @@ const CleaningList = ({ fileList, selectForEdit, currentFile }) => {
             ${currentFile.uid === file.uid ? 'img-thumb-selected ' : ''}
           `}
         >
-          <div class="img-thumb-uploading"><div></div><div></div><div></div><div></div></div>
+          <div className="img-thumb-uploading"><div></div><div></div><div></div><div></div></div>
         </div>
       )
     }
