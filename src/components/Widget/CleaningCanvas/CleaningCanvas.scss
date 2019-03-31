@@ -1,0 +1,44 @@
+
+#CleaningCanvas {
+
+}
+
+#CleaningCanvas-controls-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CleaningCanvas-controls-segment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.CleaningCanvas-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.CleaningCanvas-control-icon {
+
+}
+
+.CleaningCanvas-control-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin: 5px 0px 0px 0px;
+}
+
+.CleaningCanvas-artboard {
+  width: 100%;
+  height: auto;
+}

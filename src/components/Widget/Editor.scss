@@ -1,0 +1,18 @@
+
+#Editor {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  width: 100%;
+}
+
+#Editor-title {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: rgba(0,0,0,0.1);
+}
