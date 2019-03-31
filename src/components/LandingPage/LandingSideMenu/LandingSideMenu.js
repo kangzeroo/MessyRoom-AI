@@ -28,6 +28,10 @@ class LandingSideMenu extends Component {
   // fnEventHandlerWithoutBind = (params) => (e) => {}
   // fnRegular = () => { this.setState((prevState, currProps) => ({})) }
 
+  closeSideMenu = () => {
+    this.props.toggleSideMenu()
+  }
+
   render () {
     return (
       <div id='LandingSideMenu'>
@@ -35,12 +39,13 @@ class LandingSideMenu extends Component {
           <div id="LandingSideMenu-shader" onClick={() => this.props.toggleSideMenu()}></div>
           <div id="LandingSideMenu-panel">
             <div id="LandingSideMenu-panel-title">
-              <Link to="/" style={{ color: 'white' }}>MessyRoom</Link>
+              <Link to="/" onClick={this.closeSideMenu} style={{ color: 'white' }}>MessyRoom</Link>
             </div>
-            <Link to="/pricing" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Pricing</div></Link>
-            <Link to="/faq" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">FAQ</div></Link>
-            <Link to="/api" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">API</div></Link>
-            <Link to="/login" style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Login</div></Link>
+            <Link to="/editor" onClick={this.closeSideMenu} style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Editor</div></Link>
+            <Link to="/pricing" onClick={this.closeSideMenu} style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Pricing</div></Link>
+            <Link to="/faq" onClick={this.closeSideMenu} style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">FAQ</div></Link>
+            <Link to="/api" onClick={this.closeSideMenu} style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">API</div></Link>
+            <Link to="/login" onClick={this.closeSideMenu} style={{ color: 'white' }}><div className="LandingSideMenu-panel-item">Login</div></Link>
           </div>
         </div>
       </div>

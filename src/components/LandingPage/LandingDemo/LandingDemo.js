@@ -8,6 +8,7 @@
 
 import React from 'react'
 import ReactCompareImage from 'react-compare-image';
+import { Link } from 'react-router-dom'
 import './LandingDemo.scss'
 
 
@@ -27,7 +28,7 @@ export default ({}) => {
         <div id="LandingDemo-title-sub">
           Indoor Photography made easy with A.I.
         </div>
-        <button id="LandingDemo-title-action" className="clickable-hoverable">LAUNCH EDITOR</button>
+        <Link to="/editor" style={{ color: 'white' }}><button id="LandingDemo-title-action" className="clickable-hoverable" style={{ cursor: 'pointer' }}>LAUNCH EDITOR</button></Link>
       </div>
       <div id="LandingDemo-demo">
         <ReactCompareImage leftImage={images[0]} rightImage={images[1]} />

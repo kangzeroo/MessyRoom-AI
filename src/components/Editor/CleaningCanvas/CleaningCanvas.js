@@ -149,7 +149,7 @@ export default class CleaningCanvas extends Component {
           <div style={{ display: "flex", flexDirection: "row", justifyContent: 'flex-start', alignItems: 'center' }}>
             <Spin size="large" />
             <div style={{ width: "30px", height: "100%" }} />
-            <b style={{ fontSize: "1.5rem" }}>IMAGE BEING RE-DRAWN...</b>
+            <b style={{ fontSize: "1.2rem" }}>DRAWING IMAGE...</b>
           </div>
           {
             this.renderPredictingControls()
@@ -162,7 +162,7 @@ export default class CleaningCanvas extends Component {
           <div style={{ display: "flex", flexDirection: "row", justifyContent: 'flex-start', alignItems: 'center' }}>
             <img src="https://img.icons8.com/color/70/000000/ok.png" />
             <div style={{ width: "30px", height: "100%" }} />
-            <b style={{ fontSize: "1.5rem" }}>IMAGE DRAWN</b>
+            <b style={{ fontSize: "1.2rem" }}>IMAGE DRAWN</b>
           </div>
           {
             this.renderCompletedControls(currentFile)

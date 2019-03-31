@@ -8,13 +8,23 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
+
+@media only screen
+  and (max-width: 700px) {
+    #CleaningCanvas-controls-bar {
+      justify-content: center;
+    }
+}
+
 
 .CleaningCanvas-controls-segment {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .CleaningCanvas-control {
